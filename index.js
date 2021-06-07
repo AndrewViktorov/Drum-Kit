@@ -38,7 +38,7 @@ function makeSound(key) {
             break;
 
         case "k":
-            new Audio("sounds/crash.mp3").play();
+            new Audio("sounds/hihat.mp3").play();
             break;
 
         case "l":
