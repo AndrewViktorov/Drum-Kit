@@ -9,7 +9,7 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
-    
+
     });
 }
 
@@ -53,9 +53,21 @@ function makeSound(key) {
 function buttonAnimation(currentKey) {
 
     var activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("pressed");
+
+    try {
+        activeButton.classList.add("pressed")
+    }
+    catch (e) {
+        console.log(e);
+    }
+
 
     setTimeout(function () {
+        try {
         activeButton.classList.remove("pressed");
+        }
+        catch(e) {
+            console.log(e);
+        }
     }, 100);
 }
